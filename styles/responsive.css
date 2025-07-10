@@ -18,6 +18,10 @@ html, body {
         min-width: unset;
         padding: 0.2rem;
     }
+
+    .container_right {
+        max-height: 30vh;
+    }
 }
 
 @media (max-width: 600px) {
@@ -41,6 +45,11 @@ html, body {
     .versus-top img[height="100px"] {
         height: 40px !important;
     }
+
+    .container_right {
+        max-height: 30vh;
+    }
+
 }
 
 @media (max-width: 480px) {
@@ -59,11 +68,20 @@ html, body {
         height: 70px !important;
         width: 50px !important;
     }
+
+    .container_right {
+        max-height: 30vh;
+    }
+
 }
 
 @media (max-width: 360px) {
     .score_box, .card_details {
         font-size: 0.5rem;
+    }
+
+    .container_right {
+        max-height: 30vh;
     }
 }
 
@@ -160,6 +178,7 @@ body {
         box-shadow: 0 2px 12px rgba(0,0,0,0.08);
         font-size: 1.2rem;
         text-align: center;
+        margin-top: 3rem;
     }
     .container {
         padding-top: 4.5rem;
@@ -177,8 +196,7 @@ body {
 @media (max-width: 780px) {
     .container {
         height: auto;
-        height: 100vh;
-        min-height: 100vh;
+        max-height: 100vh;
         padding: 0;
     }
 
@@ -190,7 +208,6 @@ body {
     }
 
     .container_left {
-        min-height: 20.5rem;
         flex-direction: column;
         align-items: center;
         justify-content: flex-start;
@@ -198,8 +215,9 @@ body {
     }
 
     .score_box {
-        padding: 0.7rem;
+        padding: 0.3rem;
         font-size: 1.1rem;
+        margin-top: 3rem;
     }
 
     .menu_avatar img,
@@ -386,6 +404,7 @@ body {
         background: rgba(255,255,255,0.7);
         z-index: 10;
         backdrop-filter: blur(2px);
+        margin-top: 2.5rem;
     }
     .card_details {
         width: 100vw;
