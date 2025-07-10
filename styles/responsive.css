@@ -1,0 +1,469 @@
+/* --- Melhorias de responsividade e acessibilidade --- */
+
+html, body {
+    max-width: 100vw;
+    overflow-x: hidden;
+}
+
+/* Breakpoints extras para dispositivos populares */
+@media (max-width: 900px) {
+    .container {
+        flex-direction: column-reverse;
+        height: auto;
+        max-height: 100vh;
+        padding: 0.5rem 0.2rem;
+    }
+    .container_left, .container_right {
+        width: 100%;
+        min-width: unset;
+        padding: 0.2rem;
+    }
+}
+
+@media (max-width: 600px) {
+    .container {
+        padding: 0;
+    }
+    .container_left, .container_right {
+        padding: 0.1rem;
+    }
+    .card-box_container {
+        gap: 0.5rem;
+    }
+    .card {
+        height: 90px !important;
+        width: 60px !important;
+    }
+    #player-field-card, #computer-field-card {
+        height: 100px !important;
+        width: 70px !important;
+    }
+    .versus-top img[height="100px"] {
+        height: 40px !important;
+    }
+}
+
+@media (max-width: 480px) {
+    .container_left {
+        min-height: 12rem;
+    }
+    .score_box, .card_details {
+        font-size: 0.7rem;
+        padding: 0.1rem;
+    }
+    .card {
+        height: 70px !important;
+        width: 45px !important;
+    }
+    #player-field-card, #computer-field-card {
+        height: 70px !important;
+        width: 50px !important;
+    }
+}
+
+@media (max-width: 360px) {
+    .score_box, .card_details {
+        font-size: 0.5rem;
+    }
+}
+
+/* Botões e áreas de toque acessíveis */
+.rpgui-button, button, .card, .card-infield {
+    min-width: 48px;
+    min-height: 48px;
+    touch-action: manipulation;
+    font-size: 1rem;
+}
+
+.rpgui-button, button {
+    padding: 0.7em 1.2em;
+    border-radius: 0.5em;
+    font-size: 1.1em;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+/* Ajuste do vídeo de fundo para cobrir toda a tela sem distorção */
+.bg-video, .bg-video .video {
+    position: fixed !important;
+    top: 0;
+    left: 0;
+    width: 100vw !important;
+    height: 100vh !important;
+    min-width: 100vw;
+    min-height: 100vh;
+    max-width: 100vw;
+    max-height: 100vh;
+    object-fit: cover;
+    z-index: -1;
+    pointer-events: none;
+    background: #000;
+}
+
+/* Garantir que frames e bordas não fiquem desproporcionais */
+.frame, .framed, .framed-golden, .framed-golden-2, .framed-grey {
+    border-width: 5px !important;
+    padding: 4px !important;
+}
+
+/* Ajuste de espaçamentos para evitar overflow */
+.container, .container_left, .container_right, .card-box_container {
+    box-sizing: border-box;
+}
+
+/* Melhorar legibilidade de textos em telas pequenas */
+.card_details p, .score_box, .rpgui-button, button {
+    line-height: 1.3;
+    word-break: break-word;
+}
+
+/* Ajuste para evitar que imagens de avatar/card vaze */
+.menu_avatar img, #card-image {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: 0 auto 0.5rem auto;
+}
+
+/* Ajuste para garantir que não haja barra de rolagem horizontal */
+body {
+    overflow-x: hidden;
+}
+
+/* Tablets (até 1024px) */
+@media (max-width: 1024px) {
+    .container {
+        flex-direction: column-reverse;
+        height: auto;
+        min-height: 100vh;
+    }
+
+    .container_left,
+    .container_right {
+        width: 100%;
+        min-width: unset;
+    }
+
+    .container_left {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .score_box {
+        position: fixed;
+        top: 0;
+        left: 0;
+        right: 0;
+        margin: 0 auto;
+        z-index: 100;
+        max-width: 100vw;
+        border-radius: 0 0 1em 1em;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        font-size: 1.2rem;
+        text-align: center;
+    }
+    .container {
+        padding-top: 4.5rem;
+    }
+    #computer-cards {
+        min-height: 100px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+    }
+}
+
+/* Celulares (até 600px) */
+@media (max-width: 780px) {
+    .container {
+        height: auto;
+        height: 100vh;
+        min-height: 100vh;
+        padding: 0;
+    }
+
+    .container_left,
+    .container_right {
+        width: 100%;
+        min-width: unset;
+        padding: 0.2rem;
+    }
+
+    .container_left {
+        min-height: 20.5rem;
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        padding: 0.5rem 0;
+    }
+
+    .score_box {
+        padding: 0.7rem;
+        font-size: 1.1rem;
+    }
+
+    .menu_avatar img,
+    #card-image {
+        width: 120px !important;
+        height: auto !important;
+        margin-bottom: 0.5rem;
+    }
+
+    .card_details {
+        width: 100%;
+        height: auto;
+        padding: 0.5rem;
+        font-size: 1rem;
+    }
+
+    .card-box_container {
+        height: auto;
+        padding: 0.5rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    #computer-cards {
+        min-height: 110px;
+        min-width: 100%;
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        background: rgba(255,255,255,0.03);
+        box-sizing: border-box;
+        overflow-x: auto;
+    }
+    .card-box {
+        min-height: 110px;
+        min-width: 100%;
+        display: flex;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        box-sizing: border-box;
+        overflow-x: auto;
+    }
+    .card {
+        height: 90px !important;
+        width: 60px !important;
+        min-width: 48px;
+        min-height: 70px;
+        max-width: 80px;
+        max-height: 120px;
+        margin: 0 0.2rem;
+        display: block;
+    }
+
+    #player-field-card,
+    #computer-field-card {
+        height: 130px !important;
+        width: 90px !important;
+    }
+
+    .bg-video .video {
+        height: 100vh;
+        width: 100vw;
+        object-fit: cover;
+    }
+
+    .versus-top img[height="100px"] {
+        height: 60px !important;
+    }
+
+    .versus-bottom {
+        margin-top: 1rem;
+    }
+
+    .frame,
+    .framed,
+    .framed-golden,
+    .framed-golden-2,
+    .framed-grey {
+        border-width: 7px !important;
+        padding: 6px !important;
+    }
+}
+
+@media (max-width: 600px) {
+    html, body {
+        width: 100vw;
+        min-height: 100vh;
+        background: transparent;
+        overflow-x: hidden;
+    }
+    .container {
+        flex-direction: column;
+        align-items: center;
+        justify-content: flex-start;
+        width: 100vw;
+        min-height: 100vh;
+        padding: 0.5rem 0 2rem 0;
+        gap: 1.2rem;
+        background: transparent;
+        border-radius: 0.7em;
+        box-shadow: none;
+    }
+    .container_left, .container_right {
+        width: 96vw;
+        min-width: unset;
+        max-width: 100vw;
+        margin: 0 auto 1rem auto;
+        padding: 0.2rem 0.5rem;
+        box-sizing: border-box;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: transparent;
+    }
+    .container_left {
+        gap: 0.7rem;
+    }
+    .container_right {
+        gap: 1.2rem;
+    }
+    .card-box_container {
+        width: 100vw;
+        padding: 0;
+        gap: 1.2rem;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        background: transparent;
+    }
+    .card-box, #computer-cards, #player-cards {
+        width: 95vw;
+        min-height: 110px;
+        display: flex !important;
+        flex-direction: row;
+        align-items: center;
+        justify-content: center;
+        gap: 0.7rem;
+        background: rgba(255,255,255,0.18);
+        border-radius: 0.7em;
+        box-sizing: border-box;
+        overflow-x: auto;
+        padding: 0.2rem 0;
+        backdrop-filter: blur(2px);
+    }
+    .card {
+        height: 100px !important;
+        width: 70px !important;
+        min-width: 50px;
+        min-height: 80px;
+        max-width: 90px;
+        max-height: 130px;
+        margin: 0 0.3rem;
+        display: block;
+        border-radius: 0.5em;
+        box-shadow: 0 2px 8px rgba(0,0,0,0.10);
+        background: rgba(255,255,255,0.7);
+        backdrop-filter: blur(1px);
+    }
+    .card-infield {
+        width: 80px;
+        height: 110px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        background: rgba(255,255,255,0.13);
+        border-radius: 0.5em;
+        backdrop-filter: blur(1px);
+    }
+    .score_box {
+        position: static;
+        width: 100vw;
+        max-width: 100vw;
+        margin: 0 0 1rem 0;
+        font-size: 1.1rem;
+        text-align: center;
+        border-radius: 0 0 1em 1em;
+        box-shadow: 0 2px 12px rgba(0,0,0,0.08);
+        background: rgba(255,255,255,0.7);
+        z-index: 10;
+        backdrop-filter: blur(2px);
+    }
+    .card_details {
+        width: 100vw;
+        max-width: 100vw;
+        font-size: 0.9rem;
+        padding: 0.5rem 0.2rem;
+        border-radius: 0.5em;
+        background: rgba(255,255,255,0.7);
+        backdrop-filter: blur(2px);
+    }
+    .menu_avatar img, #card-image {
+        width: 90px !important;
+        height: auto !important;
+        margin-bottom: 0.5rem;
+    }
+    .versus-top img[height="100px"] {
+        height: 50px !important;
+    }
+    .versus-bottom {
+        margin-top: 0.7rem;
+    }
+    .frame, .framed, .framed-golden, .framed-golden-2, .framed-grey {
+        border-width: 5px !important;
+        padding: 4px !important;
+        background: transparent !important;
+    }
+    #card-name, #card-type {
+        color: #fff;
+        text-shadow: 0 1px 4px #000, 0 0px 2px #222;
+    }
+    #score_points {
+        color: #fff;
+        text-shadow: 0 1px 4px #000, 0 0px 2px #222;
+    }
+    .frame {
+        border: none !important;
+        background: transparent !important;
+        box-shadow: none !important;
+    }
+    .score_box {
+        padding-top: 1.2em;
+        padding-bottom: 0.7em;
+    }
+}
+
+@media (max-width: 600px) {
+    .score_box {
+        font-size: 1rem;
+        padding: 0.7em 0.2em;
+    }
+    #computer-cards {
+        min-height: 80px;
+    }
+}
+
+/* Ajustes para fontes pequenas em telas muito pequenas */
+@media (max-width: 400px) {
+    .score_box {
+        font-size: 0.6rem;
+        padding: 0.2rem;
+    }
+
+    .card_details {
+        font-size: 0.6rem;
+        padding: 0.1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    #computer-cards, .card-box {
+        min-height: 80px;
+    }
+    .card {
+        height: 70px !important;
+        width: 45px !important;
+        min-width: 40px;
+        min-height: 60px;
+        max-width: 60px;
+        max-height: 90px;
+    }
+}
