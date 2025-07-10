@@ -305,6 +305,10 @@ body {
         border-width: 7px !important;
         padding: 6px !important;
     }
+    .card-versus_container {
+        margin: 0;
+        height: fit-content;
+    }
 }
 
 @media (max-width: 600px) {
@@ -448,6 +452,10 @@ body {
         padding-top: 1.2em;
         padding-bottom: 0.7em;
     }
+    .card-versus_container {
+        margin: 0;
+        height: fit-content;
+    }
 }
 
 @media (max-width: 600px) {
@@ -457,6 +465,10 @@ body {
     }
     #computer-cards {
         min-height: 80px;
+    }
+    .card-versus_container {
+        margin: 0;
+        height: fit-content;
     }
 }
 
@@ -471,6 +483,11 @@ body {
         font-size: 0.6rem;
         padding: 0.1rem;
     }
+
+    .card-versus_container {
+        margin: 0;
+        height: fit-content;
+    }
 }
 
 @media (max-width: 480px) {
@@ -484,5 +501,10 @@ body {
         min-height: 60px;
         max-width: 60px;
         max-height: 90px;
+    }
+
+    .card-versus_container {
+        margin: 0;
+        height: fit-content;
     }
 }
