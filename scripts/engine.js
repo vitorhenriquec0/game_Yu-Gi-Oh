@@ -24,7 +24,7 @@ const state = {
     },
 };
 
-const pathImages = "../assets/icons/"
+const pathImages = "./assets/icons/"
 const cardData = [
     {
         id: 0,
@@ -60,7 +60,7 @@ async function getRandomCardId() {
 async function createCardImage(IdCard, fieldSide) {
     const cardImage = document.createElement("img");
     cardImage.setAttribute("height", "100px");
-    cardImage.setAttribute("src", "../assets/icons/card-back.png");
+    cardImage.setAttribute("src", "./assets/icons/card-back.png");
     cardImage.setAttribute("data-id", IdCard);
     cardImage.classList.add("card");
 
@@ -179,7 +179,7 @@ async function resetDuel() {
 }
 
 async function playAudio(status) {
-    const audio = new Audio(`../assets/audios/${status.toLowerCase()}.wav`)
+    const audio = new Audio(`./assets/audios/${status.toLowerCase()}.wav`)
     audio.play();
 }
 
